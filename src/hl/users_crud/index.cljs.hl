@@ -19,17 +19,20 @@
     (rpc/create-system name)))
 
 (defc= edit-cell
-  (if (empty? rpc/systems)
-    (a :href "#" :click #(rpc/get-systems) "Add System")
-    (span (select
-            (for [system rpc/systems]
-              (option :value (:id system) (:name system))))
-      " "
-      (button :click #(println "Foo") "Add to user")
-      " "
-      (a :href "#" :click #(clear-sys) "Cancel")
-      " "
-      (a :href "#" :click #(new-sys) "New system"))))
+  (span
+    (if (empty? rpc/systems)
+      (a :href "#" :click #(rpc/get-systems) "Add System")
+      (span (select
+              (for [system rpc/systems]
+                (option :value (:id system) (:name system))))
+        " "
+        (button
+          :click #(rpc/add-attribution (-> % .-target .-parentElement (.querySelector "select") .-value))
+          "Add to user")
+        " "
+        (a :href "#" :click #(clear-sys) "Cancel")
+        " "
+        (a :href "#" :click #(new-sys) "New system")))))
 
 (defn edit-user [user]
   (div
@@ -38,7 +41,7 @@
     (h3 "Systems:")
     (ul
       (for [system (:systems user)]
-        (li (:name system) (a :click #(rpc/remove-system (:id system)) "Remove"))))
+        (li (:name system) " " (a :href "#" :click #(rpc/remove-system (:id system)) "Remove"))))
     (p edit-cell)
     (p (a :href "#" :click #(reset! rpc/user-to-edit nil) "Cancel edit"))))
 

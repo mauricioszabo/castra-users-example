@@ -14,21 +14,24 @@
 (defc user-to-edit nil)
 (def edit-accounts (mkremote 'users-crud.api/edit-accounts user-to-edit error loading))
 (defn edit-user [user-id]
-  (println user-id)
   (edit-accounts user-id))
+(defn remove-system [system-id]
+  ((mkremote 'users-crud.api/remove-attribution user-to-edit error loading)
+    @user-to-edit system-id))
+
+(defn add-attribution [system-id]
+  ((mkremote 'users-crud.api/add-attribution user-to-edit error loading)
+    @user-to-edit system-id))
 
 (defc systems [])
 (defn get-systems [] ((mkremote 'users-crud.api/get-systems systems error loading)))
 
-(defn remove-system [system-id] (println "Removing" system-id))
 (defn create-system [name]
   ((mkremote 'users-crud.api/create-system systems error loading) name))
 
 (defc= state
-  (do
-    (println user-to-edit)
   {:editing user-to-edit
-   :users users}))
+   :users users})
 
 (defn init []
   (get-users))
