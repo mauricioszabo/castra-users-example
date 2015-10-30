@@ -57,5 +57,4 @@
 
     (h1 (text "Users"))
 
-    (div code-to-render)
-    ))
+    (div code-to-render)))
