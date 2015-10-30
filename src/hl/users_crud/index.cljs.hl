@@ -11,7 +11,7 @@
     (tr (th "id") (th "name") (th "action"))
       (for [user rpc/users]
         (tr (-> user :id td) (-> user :name td)
-          (td (a :href "#" :click #(rpc/edit-user (:id user)) "foo"))))))
+          (td (a :href "#" :click #(rpc/edit-user (:id user)) "Edit accounts"))))))
 
 (defn clear-sys [] (reset! rpc/systems []))
 (defn new-sys []
