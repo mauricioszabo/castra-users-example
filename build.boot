@@ -3,7 +3,10 @@
                   [adzerk/boot-reload        "0.4.1"]
                   [compojure                 "1.4.0"]
                   [hoplon/boot-hoplon        "0.1.10"]
-                  [hoplon/castra             "3.0.0-SNAPSHOT"]
+                  ;[hoplon/castra             "3.0.0-SNAPSHOT"]
+                  [com.cognitect/transit-clj  "0.8.281"]
+                  [com.cognitect/transit-cljs "0.8.225"]
+                  ; END
                   [hoplon/hoplon             "6.0.0-alpha10"]
                   [korma                     "0.4.0"]
                   [org.xerial/sqlite-jdbc    "3.7.15-M1"]
@@ -13,7 +16,7 @@
                   [ring                      "1.4.0"]
                   [ring/ring-defaults        "0.1.5"]]
   :resource-paths #{"assets" "src/clj"}
-  :source-paths   #{"src/cljs" "src/hl"})
+  :source-paths   #{"../castra/src" "src/cljs" "src/hl"})
 
 (require
   '[adzerk.boot-cljs      :refer [cljs]]
@@ -30,7 +33,7 @@
       :handler 'users-crud.handler/app
       :reload  true)
     (watch)
-    (speak)
+    ;(speak)
     (hoplon)
     (reload)
     (cljs)))

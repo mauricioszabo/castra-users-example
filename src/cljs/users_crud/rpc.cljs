@@ -1,8 +1,9 @@
 (ns users-crud.rpc
   (:require-macros
     [javelin.core :refer [defc defc=]])
+    
   (:require
-   [javelin.core]
+   [javelin.core :refer [cell]]
    [castra.core :refer [mkremote]]))
 
 (defc error nil)
@@ -11,10 +12,13 @@
 (defc users [])
 (def get-users (mkremote 'users-crud.api/get-users users error loading))
 
+
 (defc user-to-edit nil)
-(def edit-accounts (mkremote 'users-crud.api/edit-accounts user-to-edit error loading))
-(defn edit-user [user-id]
-  (edit-accounts user-id))
+(def edit-user
+  (let [n (fn [a] )
+        success #(reset! user-to-edit %)]
+    (mkremote 'users-crud.api/edit-accounts success n n)))
+
 (defn remove-system [system-id]
   ((mkremote 'users-crud.api/remove-attribution user-to-edit error loading)
     @user-to-edit system-id))

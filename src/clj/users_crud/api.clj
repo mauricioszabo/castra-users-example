@@ -10,6 +10,7 @@
   (select systems))
 
 (defrpc edit-accounts [id]
+  (println "Called!")
   (first (select users (with systems) (where (= :id id)))))
 
 (defrpc create-system [name]
