@@ -51,7 +51,7 @@ You can easily deploy this application for free to [Heroku][5].
 
 ## License
 
-Copyright © 2015, Maurício Eduardo Chicupo Szabo.
+Creative Commons 4.0 SA 2015, Maurício Eduardo Chicupo Szabo.
 
 [1]: http://boot-clj.com
 [2]: https://github.com/hoplon/castra
