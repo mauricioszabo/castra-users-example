@@ -13,7 +13,7 @@ Javelin, and Hoplon.
 1. Install boot. This is as simple as following instructions on
 boot page (https://github.com/boot-clj/boot). You **do not need** clojure, nor any
 other dependency - only Java 1.7 and boot.
-1. Create database with "boot dev". It'll download all dependencies, clojure and
+1. Create database with `boot createdb`. It'll download all dependencies, clojure and
 clojurescript, then it will create a database with some seeds for you.
 1. Start the `dev` task. In a terminal run:
     ```bash
