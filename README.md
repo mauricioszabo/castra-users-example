@@ -32,7 +32,7 @@ transmited to the client. But you should change that to what you want.
 1. If you edit and save a file, the task will recompile the code and reload the
    browser to show the updated version.
 
-.### Production
+### Production
 1. Run the `prod` task. In a terminal run:
     ```bash
     $ boot prod
