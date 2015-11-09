@@ -1,6 +1,7 @@
-# users-crud
+# Hoplon Example
 
-A [Hoplon][4] project with [Castra][2] designed to...well, that part is up to you.
+A [Hoplon][4] project with [Castra][2] designed to test capabilities of Castra,
+Javelin, and Hoplon.
 
 ## Dependencies
 
@@ -9,6 +10,11 @@ A [Hoplon][4] project with [Castra][2] designed to...well, that part is up to yo
 
 ## Usage
 ### Development
+1. Install boot. This is as simple as following instructions on
+boot page (https://github.com/boot-clj/boot). You **do not need** clojure, nor any
+other dependency - only Java 1.7 and boot.
+1. Create database with "boot dev". It'll download all dependencies, clojure and
+clojurescript, then it will create a database with some seeds for you.
 1. Start the `dev` task. In a terminal run:
     ```bash
     $ boot dev
@@ -19,11 +25,11 @@ A [Hoplon][4] project with [Castra][2] designed to...well, that part is up to yo
     - auto reload the html page on changes
     - Clojurescript REPL
 
-2. Go to [http://localhost:8000][3] in your browser. You should see "Hello,
+1. Go to [http://localhost:8000][3] in your browser. You should see "Hello,
 Hoplon and Castra!" with random numbers that are generated on the server and
 transmited to the client. But you should change that to what you want.
 
-3. If you edit and save a file, the task will recompile the code and reload the
+1. If you edit and save a file, the task will recompile the code and reload the
    browser to show the updated version.
 
 .### Production
@@ -45,7 +51,7 @@ You can easily deploy this application for free to [Heroku][5].
 
 ## License
 
-Copyright © 2015, **Your Name Goes Here**
+Copyright © 2015, Maurício Eduardo Chicupo Szabo.
 
 [1]: http://boot-clj.com
 [2]: https://github.com/hoplon/castra
